@@ -29,10 +29,7 @@
 }
 
 .header > h2 {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 36px;
-  text-align: left;
+  font: normal 700 24px / 36px Poppins;
 }
 
 .header > nav > ul {
@@ -46,10 +43,14 @@
 }
 
 .header > nav > ul > li > a {
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0px;
+  font: normal 600 16px Poppins;
   color: #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header > nav > ul > li > a:hover {
+  color: #E02C6D;
 }
 
 @media (max-width: 1076px) {
@@ -95,15 +96,12 @@
 }
 
 .banner > div:first-child > h2 {
-  font-size: 52px;
-  font-weight: 700;
-  line-height: 70px;
+  font: normal 700 52px / 70px Poppins;
   margin-bottom: 16px;
 }
 
 .banner > div:first-child > p {
-  font-weight: 600;
-  line-height: 24px;
+  font: normal 600 16px / 24px Poppins;
   margin-bottom: 16px;
   color: #787885;
 }
@@ -114,6 +112,25 @@
   color: #fff;
   border-radius: 41px;
   background: #E02C6D;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  font-weight: 700;
+  border: 2px solid #E02C6D;
+}
+
+.banner > div:first-child > button:hover {
+  color: #E02C6D;
+  background: #fff;
+}
+
+.banner > div:first-child > button:hover > i {
+  color: #E02C6D;
+}
+
+.banner > div:first-child > button > i {
+  padding-left: 12px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 @media (max-width: 1076px) {
@@ -128,13 +145,13 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    flex-direction: column-reverse;
   }
   .banner > div:first-child {
     text-align: center;
   }
   .banner > div:first-child > h2 {
     font-size: 40px;
-    font-weight: 700;
     line-height: 42px;
     margin-bottom: 26px;
   }
@@ -151,8 +168,7 @@
 @media (max-width: 670px) {
   .banner > div:first-child > h2 {
     font-size: 28px;
-    font-weight: 700;
-    line-height: 42px;
+    line-height: 38px;
   }
   .banner > div:first-child > p {
     font-size: 14px;
@@ -164,11 +180,7 @@
 
 .spon {
   margin: 50px auto;
-  border-width: 2px;
-  border-style: solid;
-  -o-border-image: linear-gradient(90deg, rgba(192, 204, 218, 0.1) 0%, rgba(192, 204, 218, 0.6) 50.38%, rgba(192, 204, 218, 0.1) 100%) 1;
-     border-image: -webkit-gradient(linear, left top, right top, from(rgba(192, 204, 218, 0.1)), color-stop(50.38%, rgba(192, 204, 218, 0.6)), to(rgba(192, 204, 218, 0.1))) 1;
-     border-image: linear-gradient(90deg, rgba(192, 204, 218, 0.1) 0%, rgba(192, 204, 218, 0.6) 50.38%, rgba(192, 204, 218, 0.1) 100%) 1;
+  border: 2px solid linear-gradient(90deg, #0077ff 0%, rgba(192, 204, 218, 0.6) 50.38%, red 100%) 1;
   border-inline: none;
   max-width: 1077px;
   display: -webkit-box;
@@ -210,11 +222,7 @@
 }
 
 .box-area > h2 {
-  font-family: Poppins;
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 70px;
-  letter-spacing: 0px;
+  font: normal 600 28px / 70px Poppins;
   text-align: center;
   margin-bottom: 30px;
   color: #3A3A3A;
@@ -226,15 +234,15 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -258,21 +266,13 @@
 }
 
 .box-area .box-container > .box > .info > h2 {
-  font-family: Poppins;
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 40px;
-  letter-spacing: 0em;
+  font: normal 500 28px / 40px Poppins;
   text-align: left;
   margin-bottom: 6px;
 }
 
 .box-area .box-container > .box > .info > h3 {
-  font-family: Inter;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 36px;
-  letter-spacing: 0em;
+  font: normal 400 24px / 36px Inter;
   text-align: left;
   margin-bottom: 11px;
 }
@@ -295,10 +295,7 @@
 
 .box-area .box-container > .box > .info > .rate > p {
   padding-left: 10px;
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 22px;
+  font: normal 700 14px / 22px Roboto;
   letter-spacing: 0.10000000149011612px;
   text-align: left;
   color: #787885;
@@ -306,10 +303,7 @@
 
 .box-area .box-container > .box > .info > p {
   width: 70%;
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
+  font: normal 400 14px / 20px Inter;
   letter-spacing: 0.018em;
   text-align: left;
 }
@@ -333,11 +327,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 90px;
-  max-width: 1040px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 90px;
+  max-width: 1040px;
   padding-inline: 15px;
 }
 
@@ -396,7 +390,6 @@
   }
   .feature > div > p {
     font-size: 16px;
-    font-weight: 700;
     line-height: 28px;
     margin-bottom: 28px;
   }

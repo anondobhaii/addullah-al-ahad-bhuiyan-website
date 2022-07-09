@@ -8,6 +8,12 @@ $text-color: #787885;
 $button-color: #E02C6D;
 
 
+@mixin flex($jc, $ai: center){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
 @mixin media($w){
     @media (max-width: $w) {
         @content;
@@ -24,32 +30,33 @@ $button-color: #E02C6D;
     font-family: Poppins;
 }
 
+// ================ Header Section ====================
+
 .header{
     max-width: 1077px;
     margin: 80px auto 50px;
     padding: 0 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between);
     >i{
         display: none;
     }
     >h2{
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 36px;
-        text-align: left;
+        font: normal 700 24px / 36px Poppins;
     }
     >nav{
         >ul{
             display: flex;
             >li{
                 margin: 0px 16px;
+                
                 >a{
-                    font-size: 16px;
-                    font-weight: 600;
-                    letter-spacing: 0px;
+                    font: normal 600 16px Poppins;
                     color: $nav-color;
+                    transition: 0.3s;
+                    &:hover{
+                        color: $button-color;
+                        
+                    }
                 }
             }
         }
@@ -69,6 +76,7 @@ $button-color: #E02C6D;
                 li{
                     padding: 0;
                     margin: 0;
+                    
                 }
             }
         }
@@ -81,24 +89,21 @@ $button-color: #E02C6D;
     }
 }
 
+// =============== Banner Section ===============
+
 .banner{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between);
     max-width: 1077px;
     padding: 0 18px;
     margin: auto;
     >div{
         &:first-child{
             >h2{
-                font-size: 52px;
-                font-weight: 700;
-                line-height: 70px;
+                font: normal 700 52px / 70px Poppins;
                 margin-bottom: 16px;
             }
             >p{
-                font-weight: 600;
-                line-height: 24px;
+                font: normal 600 16px / 24px Poppins;
                 margin-bottom: 16px;
                 color: $text-color;
             }
@@ -108,23 +113,33 @@ $button-color: #E02C6D;
                 color: #fff;
                 border-radius: 41px;
                 background: $button-color;
-            }
-            
+                transition: 0.3s ease-in;
+                font-weight: 700;
+                border: 2px solid $button-color;
+                &:hover{
+                    color: $button-color;
+                    background: #fff;
+                    >i{
+                        color: $button-color;
+                    }
+                }
+                >i{
+                    padding-left: 12px;
+                    transition: 0.2s;
+                }
+            } 
         }   
-        &:last-child{
-
-        }
     }
     @include media(1076px){
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+        flex-direction:column-reverse;
         >div{
             &:first-child{
                 text-align: center;
                 >h2{
                     font-size: 40px;
-                    font-weight: 700;
                     line-height: 42px;
                     margin-bottom: 26px;
                 }
@@ -147,8 +162,7 @@ $button-color: #E02C6D;
             &:first-child{
                 >h2{
                     font-size: 28px;
-                    font-weight: 700;
-                    line-height: 42px;
+                    line-height: 38px; 
                 }
                 >p{
                     font-size: 14px;
@@ -164,11 +178,11 @@ $button-color: #E02C6D;
     }
 }
 
+// =============== Sponser Section ===============
+
 .spon{
     margin: 50px auto;
-    border-width: 2px;
-    border-style: solid;
-    border-image: linear-gradient(90deg, rgba(192, 204, 218, 0.1) 0%, rgba(192, 204, 218, 0.6) 50.38%, rgba(192, 204, 218, 0.1) 100%) 1;
+    border: 2px solid linear-gradient(90deg, rgb(0, 119, 255) 0%, rgba(192, 204, 218, 0.6) 50.38%, rgb(255, 0, 0) 100%) 1;
     border-inline: none;
     max-width: 1077px;
     display: flex;
@@ -196,13 +210,11 @@ $button-color: #E02C6D;
     }
 }
 
+// =============== Box-Area Section ===============
+
 .box-area{
     > h2{
-        font-family: Poppins;
-        font-size: 28px;
-        font-weight: 600;
-        line-height: 70px;
-        letter-spacing: 0px;
+        font: normal 600 28px / 70px Poppins;
         text-align: center;
         margin-bottom: 30px;
         color: #3A3A3A;
@@ -210,10 +222,8 @@ $button-color: #E02C6D;
     .box-container{
         max-width: 1077px;
         margin: 0 auto;
-        display: flex;
+        @include flex(center);
         flex: 1 1 100%;
-        justify-content: center;
-        align-items: center;
         flex-wrap: wrap;
     
         > .box{
@@ -232,21 +242,13 @@ $button-color: #E02C6D;
                 padding-inline: 14px;
     
                 >h2{
-                    font-family: Poppins;
-                    font-size: 28px;
-                    font-weight: 500;
-                    line-height: 40px;
-                    letter-spacing: 0em;
+                    font: normal 500 28px / 40px Poppins;
                     text-align: left;
                     margin-bottom: 6px;
                 }
     
                 >h3{
-                    font-family: Inter;
-                    font-size: 24px;
-                    font-weight: 400;
-                    line-height: 36px;
-                    letter-spacing: 0em;
+                    font: normal 400 24px / 36px Inter;
                     text-align: left;
                     margin-bottom: 11px;
                 }
@@ -261,10 +263,7 @@ $button-color: #E02C6D;
                     }
                     >p{
                         padding-left: 10px;
-                        font-family: Roboto;
-                        font-size: 14px;
-                        font-weight: 700;
-                        line-height: 22px;
+                        font: normal 700 14px / 22px Roboto;
                         letter-spacing: 0.10000000149011612px;
                         text-align: left;
                         color: $text-color;
@@ -272,10 +271,7 @@ $button-color: #E02C6D;
                 }
                 >p{
                     width: 70%;
-                    font-family: Inter;
-                    font-size: 14px;
-                    font-weight: 400;
-                    line-height: 20px;
+                    font: normal 400 14px / 20px Inter;
                     letter-spacing: 0.018em;
                     text-align: left;
                 }
@@ -295,13 +291,15 @@ $button-color: #E02C6D;
     }
 }
 
+// =============== Feature Section ===============
+
 .feature{
     margin-top: 100px;
     margin-inline: auto;
     display: flex;
+    align-items: center;
     gap: 90px;
     max-width: 1040px;
-    align-items: center;
     padding-inline: 15px;
     >img{
         width: 404px;
@@ -347,13 +345,14 @@ $button-color: #E02C6D;
             }
             >p{
                 font-size: 16px;
-                font-weight: 700;
                 line-height: 28px;
                 margin-bottom:28px;
             }
         }  
     }
 }
+
+// =============== Footer Section ===============
 
 .footer{
     margin-top: 100px;
